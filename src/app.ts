@@ -165,14 +165,14 @@ let newarr : (number|string )[] = [];
 newarr=["Ali" , 22 ];
 newarr=[22 , "Ali", "salar" , 54];
 newarr.push("another ali " , 25) ; 
-newarr.push(true); // here i recieve an Error because i didnt tell the var clearly abot the boolian type
+//newarr.push(true); // here i recieve an Error because i didnt tell the var clearly abot the boolian type
 // as we see there is no problem to add some othe parametr and index to arry 
 
 let  newtup : [string,number];
 newtup= ["amir" , 22];
 newtup= ["Ali" , 21];
-newtup=["alli"]; // here i have a recieve an Error because thers no Nubmer. 
-newtup= ["alli", 22 , " salar "] // and here i have a Error too becaus of that i have 3 Index
+newtup=["alli",]; // here i have a recieve an Error because thers no Nubmer. 
+newtup= ["alli", 22 "ljkjj"] // and here i have a Error too becaus of that i have 3 Index
 
 
 function Test1 (id : String | number) {
@@ -193,7 +193,7 @@ function f (num1 : number , num2:number) {
         throw new Error("its impossible")
     }
 
-    return(a + b)
+    return (num1 + num2)
 
 
 }
@@ -246,6 +246,57 @@ function read(statu:Statu) {
 }
 
 // thats my Homework and done
+
+type Square = {
+
+    sidelength : number
+    kind : "Square"
+
+
+}
+type Rectangle = {
+
+    
+    width : number;
+    hight : number;
+    kind : "Rectangle"
+
+}
+
+type Circle  = {
+
+    radiuce : number;
+    kind : "Circle"
+}
+
+
+type Shape = Circle | Square | Rectangle;
+
+function districtArea (shape : Shape ) {
+
+    switch (shape.kind) {
+
+        case "Square" :
+            return shape.sidelength * shape.sidelength ; 
+
+            case "Rectangle" :
+            return shape.width * shape.hight ; 
+
+            case "Circle" :
+            return shape.radiuce * shape.radiuce * Math.PI  ; 
+
+}
+
+}
+
+districtArea({kind: "Square" , sidelength : 10});
+districtArea({kind: "Rectangle" , width : 10 , hight : 5});
+districtArea({kind: "Circle" , radiuce : 10});
+
+
+
+
+
 
 
 
