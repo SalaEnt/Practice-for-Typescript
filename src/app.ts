@@ -295,7 +295,52 @@ districtArea({kind: "Circle" , radiuce : 10});
 
 
 
+/*یک فانکشن بنویس که ورودی‌اش می‌تونه:
+	•	string
+	•	number
+	•	string[]
 
+باشد.
+
+قوانین
+	•	اگر string بود → طولش
+	•	اگر number بود → مربعش
+	•	اگر string[] بود → تعداد آیتم‌ها*/ 
+
+   /*type NP ={
+
+    X1 : number;
+   } 
+    type ST ={
+
+    X1 : string;
+   } */
+    
+    type Entrie = number|string|string[];
+    function inf (entrie: Entrie) {
+
+    if (typeof entrie === "string"){
+
+        return entrie.length;
+
+        
+    }
+    if (typeof entrie === "number") {
+
+            return entrie*entrie
+        }
+        else {
+
+            return entrie.length;
+        }
+
+
+
+        
+
+
+
+    }
 
 
 
