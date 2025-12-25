@@ -334,14 +334,47 @@ districtArea({kind: "Circle" , radiuce : 10});
             return entrie.length;
         }
 
+ }
+ 
+ 
+ 
+ /**یک فانکشن وضعیت پرداخت را بررسی کند
 
 
-        
+type PaymentStatus = "pending" | "paid" | "failed";
+
+function getPaymentMessage(status: PaymentStatus): string {
+  // switch یا if
+}
 
 
+
+
+اگر status خارج از این‌ها بود، TS نباید اجازه بده */
+
+
+type PaymentStatus = "pending" | "paid" | "failed" ;
+function checktype (n : never ):never {
+
+    throw new Error("its not clear , please try agin")
+
+}
+
+function getPaymentMessage(status : PaymentStatus):string {
+
+    switch(status) {
+
+        case "paid":
+            return "that was successful"
+            case "pending":
+                return "we are waiting for the paying"
+                case "failed":
+                    return "that was unsuccessful "
+                    default :
+                    return checktype(status);
 
     }
-
+}
 
 
 
