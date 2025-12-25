@@ -376,11 +376,52 @@ function getPaymentMessage(status : PaymentStatus):string {
     }
 }
 
+/**این فانکشن هارو کامل کنید
+
+
+function normalizeValue(value: unknown): string {
+  // string → uppercase
+  // number → toString
+  // boolean → "true" | "false"
+  // بقیه → "invalid"
+}
 
 
 
 
-     
+
+type User = {
+  id: number;
+  profile?: {
+    email?: string;
+    age?: number;
+  };
+};
+
+function getUserEmail(user: User): string {
+  // اگر ایمیل نبود "no-email"
+} */
+
+
+
+     function normalizeValue(value: unknown): string {
+  
+        if (typeof value === "string") {
+            return value.toUpperCase();
+        }
+
+        if (typeof value === "number") {
+           return value.toString();
+        }
+        else if (typeof value === "boolean") {
+            return value ? "true" : "false"  // boolean to string
+        } 
+        else {
+            return "its invalid"
+        }
+
+}
+
 
 
 
